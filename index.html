@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Push Noticification</title>
+  </head>
+  <body>
+    <button type="button" id="btnPushNoticification">
+      Allow Noticification
+    </button>
+    <script>
+      document
+        .getElementById("btnPushNoticification")
+        .addEventListener("click", () => {
+          Notification.requestPermission().then((Permissions) => {
+            if (Permissions === "granted") {
+              new Notification("Testing Purpase", {
+                body: "This is Body Text",
+                icon: "https://img.freepik.com/free-photo/hand-touching-with-search-icon-search-engine-optimisation-seo-concept-find-information-by-internet-connection_616485-37.jpg?w=1380&t=st=1692983771~exp=1692984371~hmac=ebb0dfec2c03c19628ce2073ecf04a1b55797eb330b80131df9d2749bbac3d29",
+                image:
+                  "https://img.freepik.com/free-photo/hand-touching-with-search-icon-search-engine-optimisation-seo-concept-find-information-by-internet-connection_616485-37.jpg?w=1380&t=st=1692983771~exp=1692984371~hmac=ebb0dfec2c03c19628ce2073ecf04a1b55797eb330b80131df9d2749bbac3d29",
+              });
+            } else {
+              alert("You Blocked Out Noticification");
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
